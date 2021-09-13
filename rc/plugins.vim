@@ -76,6 +76,8 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     Plug 'iamcco/mathjax-support-for-mkdp'
     Plug 'iamcco/markdown-preview.vim'
     Plug 'joker1007/vim-markdown-quote-syntax'
+    Plug 'vimwiki/vimwiki'
+    Plug 'sotte/presenting.vim'
     " like vscode's zen mode
     Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
 call plug#end()
@@ -96,4 +98,5 @@ call utils#source(s:path, 'plugins/ultisnips')
 call utils#source(s:path, 'plugins/vim-markdown')
 call utils#source(s:path, 'plugins/vim-markdown-toc')
 call utils#source(s:path, 'plugins/vimtex')
+call utils#source(s:path, 'plugins/vimwiki')
 
