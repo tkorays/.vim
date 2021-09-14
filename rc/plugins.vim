@@ -8,6 +8,8 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     " Plug 'mhinz/vim-startify'
     " scroll smoothly
     Plug 'psliwka/vim-smoothie'
+    " calendar
+    " Plug 'itchyny/calendar.vim'
     " highlight mutiword, <leader>k <leader>K
     Plug 'lfv89/vim-interestingwords'
     " a beautiful stats bar
@@ -23,6 +25,8 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     Plug 'tpope/vim-fugitive'
     " show modification
     Plug 'airblade/vim-gitgutter'
+    " like gitlens in vscode
+    " Plug 'APZelos/blamer.vim'
     " auto pair
     Plug 'jiangmiao/auto-pairs'
     " move fastly
@@ -34,7 +38,6 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     " a spacevim theme
     Plug 'liuchengxu/space-vim-dark'
     Plug 'morhetz/gruvbox'
-    Plug 'APZelos/blamer.vim'
     " debug
     Plug 'puremourning/vimspector'
     " gtest
