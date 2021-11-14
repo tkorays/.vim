@@ -45,6 +45,8 @@ call plug#begin(g:vimrc_root_dir."/bundle")
 
     " coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " tag using lsp
+    " Plug 'liuchengxu/vista.vim'
     " use ALE for lint
     Plug 'dense-analysis/ale'
     " Plug 'prabirshrestha/vim-lsp'
@@ -79,10 +81,12 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     Plug 'iamcco/mathjax-support-for-mkdp'
     Plug 'iamcco/markdown-preview.vim'
     Plug 'joker1007/vim-markdown-quote-syntax'
-    Plug 'vimwiki/vimwiki'
+    " Plug 'vimwiki/vimwiki'
     Plug 'sotte/presenting.vim'
     " like vscode's zen mode
     Plug 'junegunn/goyo.vim', { 'for': 'markdown' }
+
+    Plug 'ianding1/leetcode.vim'
 call plug#end()
 
 let s:path = fnamemodify(resolve(expand('<sfile>:p')),':h')
@@ -103,3 +107,4 @@ call utils#source(s:path, 'plugins/vim-markdown-toc')
 call utils#source(s:path, 'plugins/vimtex')
 call utils#source(s:path, 'plugins/vimwiki')
 
+let g:interestingWordsGUIColors = ['#aeee00', '#ff0000', '#0000ff', '#b88823', '#ffa724', '#ff2c4b', '#8CCBEA', '#A4E57E', '#FFDB72', '#FF7272', '#FFB3FF', '#9999FF']

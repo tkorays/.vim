@@ -25,7 +25,7 @@ set tags=./.tags;,.tags
 set redrawtime=10000
 syntax sync minlines=256
 set colorcolumn=120
-set mouse=a
+" set mouse=a
 
 " set foldmethod=syntax
 " set foldlevelstart=99
