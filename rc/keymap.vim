@@ -1,20 +1,18 @@
 let mapleader="\<space>"
 
 " easy-align
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+xmap ea <Plug>(EasyAlign)
+nmap ea <Plug>(EasyAlign)
 
 nmap <leader>nn :NERDTreeToggle<CR>
 nmap <leader>nc :NERDTreeFind %<CR>
 nmap <Leader>t :TagbarToggle<CR>
-nmap <Leader>s :A<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>Q :qa<CR>
 nmap <Leader>w :w<CR>
-nmap <Leader>z <C-w><C-w>
 nmap <Leader>p :read !pbpaste<CR>
 
-let g:Lf_ShortcutF = '<leader>f'
+let g:Lf_ShortcutF = '<leader>ff'
 let g:Lf_FollowLinks = 1
 nmap <Leader>b :LeaderfBuffer<CR>
 nmap <Leader>lm :LeaderfFunction<CR>
@@ -25,28 +23,17 @@ nmap <leader>ls :Leaderf! rg -F -e ""
 nn <Leader>lb :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
 nn <Leader>lg :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
 xnoremap fg :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
-noremap go :<C-U>Leaderf! rg --recall<CR>
 
 nn <Leader>cq :cclose<CR>
-nn <Leader>al :ALELint<CR>
 
 " easymotion jump
 nmap <Leader><Leader>s <Plug>(easymotion-s2)
-
-nn <silent> <leader>gd :ALEDetail<cr>
-nn <silent> <leader>gmm [m
-nn <silent> <leader>gme ]M
-nn <silent> <leader>gj :ALENext<CR>
-nn <silent> <leader>gk :ALEPrevious<CR>
-
-nmap <leader>gj :diffget //3<CR>
-nmap <leader>gf :diffget //2<CR>
-nmap <leader>gs :G<CR>
 
 " gtest
 autocmd FileType cpp nnoremap <silent> <leader>rt :GTestRun<CR>
 autocmd FileType cpp nnoremap <silent> <leader>ru :GTestRunUnderCursor<CR>
 
+" d is reserved for debug
 nmap <silent><nowait><space>dn <Plug>VimspectorStepOver
 nmap <A-n> <Plug>VimspectorStepOver
 nmap <silent><nowait><space>db <Plug>VimspectorToggleBreakpoint
@@ -79,9 +66,31 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gh :call CocActionAsync('doHover')<cr>
 nmap <silent> gc :call CocLocations('ccls','$ccls/call')<cr>
 nmap <silent> gC :call CocLocations('ccls','$ccls/call',{'callee':v:true})<cr>
-nmap <leader>rr <Plug>(coc-rename)
-nmap <leader>x :CocFix<CR>
+nmap <silent> gw <Plug>WinWin<CR>
+nmap <silent> go :<C-U>Leaderf! rg --recall<CR>
 
-nmap <silent>gb :Git blame<CR>
+" window management
+nmap <c-j> <C-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+nmap <c-p> <c-w>p
 
+" x : execute something
+nmap <leader>xf :CocFix<CR>
+nmap <leader>xh :LspCxxHighlight<CR>
+nmap <leader>xr <Plug>(coc-rename)
+nmap <leader>xb :Git blame<CR>
+nmap <Leader>xl :ALELint<CR>
+nmap <Leader>xs :A<CR>
+
+" g : goto
+nn <silent> <leader>gd :ALEDetail<cr>
+nn <silent> <leader>gmm [m
+nn <silent> <leader>gme ]M
+nmap <leader>gj :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gs :G<CR>
+" nn <silent> <leader>gn :ALENext<CR>
+" nn <silent> <leader>gp :ALEPrevious<CR>
 
