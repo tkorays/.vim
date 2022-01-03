@@ -12,18 +12,6 @@ nmap <Leader>Q :qa<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>p :read !pbpaste<CR>
 
-let g:Lf_ShortcutF = '<leader>ff'
-let g:Lf_FollowLinks = 1
-nmap <Leader>b :LeaderfBuffer<CR>
-nmap <Leader>lm :LeaderfFunction<CR>
-nmap <Leader>lt :LeaderfBufTag<CR>
-nmap <Leader>lu :LeaderfMru<CR>
-nmap <Leader>ll :LeaderfLine<CR>
-nmap <leader>ls :Leaderf! rg -F -e ""
-nn <Leader>lb :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
-nn <Leader>lg :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
-xnoremap fg :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
-
 nn <Leader>cq :cclose<CR>
 
 " easymotion jump
@@ -58,6 +46,20 @@ nmap <silent><nowait><space>dlt <Plug>VimspectorShowOutput Telemetry<CR>
 nmap <silent><nowait><space>de :<C-u>VimspectorEval<space>
 nmap <silent><nowait><space>dw :<C-u>VimspectorWatch<space>
 
+" leaderf
+let g:Lf_ShortcutF = '<leader>ff'
+let g:Lf_FollowLinks = 1
+nmap <Leader>b :LeaderfBuffer<CR>
+nmap <Leader>lm :LeaderfFunction<CR>
+nmap <Leader>lt :LeaderfBufTag<CR>
+nmap <Leader>lu :LeaderfMru<CR>
+nmap <Leader>ll :LeaderfLine<CR>
+nmap <leader>ls :Leaderf! rg -F -e ""
+nn <Leader>lb :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
+nn <Leader>lg :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+xnoremap fg :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
+nmap <silent> go :<C-U>Leaderf! rg --recall<CR>
+
 " coc
 nmap <silent> ga <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -66,8 +68,8 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gh :call CocActionAsync('doHover')<cr>
 nmap <silent> gc :call CocLocations('ccls','$ccls/call')<cr>
 nmap <silent> gC :call CocLocations('ccls','$ccls/call',{'callee':v:true})<cr>
+
 nmap <silent> gw <Plug>WinWin<CR>
-nmap <silent> go :<C-U>Leaderf! rg --recall<CR>
 
 " window management
 nmap <c-j> <C-w>j

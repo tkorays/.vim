@@ -9,7 +9,7 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     " scroll smoothly
     Plug 'psliwka/vim-smoothie'
     " window manager
-    Plug 'dstein64/vim-win'
+    " Plug 'dstein64/vim-win'
     " calendar
     " Plug 'itchyny/calendar.vim'
     " highlight mutiword, <leader>k <leader>K
@@ -108,7 +108,7 @@ call utils#source(s:path, 'plugins/vim-markdown')
 call utils#source(s:path, 'plugins/vim-markdown-toc')
 call utils#source(s:path, 'plugins/vimtex')
 call utils#source(s:path, 'plugins/vimwiki')
-call utils#source(s:path, 'plugins/vim-win')
+" call utils#source(s:path, 'plugins/vim-win')
 
 let g:interestingWordsGUIColors = ['#aeee00', '#ff0000', '#0000ff', '#b88823', '#ffa724', '#ff2c4b', '#8CCBEA', '#A4E57E', '#FFDB72', '#FF7272', '#FFB3FF', '#9999FF']
 
