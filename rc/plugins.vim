@@ -38,7 +38,7 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     Plug 'mg979/vim-visual-multi'
     Plug 'junegunn/vim-easy-align'
     " a spacevim theme
-    Plug 'liuchengxu/space-vim-dark'
+    " Plug 'liuchengxu/space-vim-dark'
     Plug 'morhetz/gruvbox'
     " debug
     Plug 'puremourning/vimspector'
@@ -54,7 +54,7 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     " Plug 'prabirshrestha/vim-lsp'
     Plug 'jackguo380/vim-lsp-cxx-highlight', { 'for': ['cpp', 'c'] }
     " switch header and execute 'source' files
-    Plug 'vim-scripts/a.vim', { 'for': ['cpp', 'c'] }
+    " Plug 'vim-scripts/a.vim', { 'for': ['cpp', 'c'] }
 
     " manage snips
     Plug 'sirver/ultisnips'
@@ -83,7 +83,7 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     Plug 'iamcco/mathjax-support-for-mkdp'
     Plug 'iamcco/markdown-preview.vim'
     Plug 'joker1007/vim-markdown-quote-syntax'
-    " Plug 'vimwiki/vimwiki'
+    Plug 'vimwiki/vimwiki'
     Plug 'sotte/presenting.vim'
     " like vscode's zen mode
     Plug 'junegunn/goyo.vim', { 'for': 'markdown' }

@@ -3,8 +3,28 @@ import socket
 import sys
 import threading
 import socketserver
+import os.path
 
 thesocket = None
+
+
+def JumpAlternateFile(f):
+    a1 = ['.h', '.hpp', '.hxx', '.hh']
+    a2 = ['.c', '.cpp', '.cxx', '.cc']
+    prefix, ext = os.path.splitext(f)
+
+    if str.lower(ext) not in a1 and str.lower(ext) not in a2:
+        return ''
+
+    if str.lower(ext) in a2:
+        a1, a2 = a2, a1
+
+    for a in a2:
+        if os.path.exists(prefix + a):
+            return prefix + a
+        if os.path.exists(prefix + str.upper(a)):
+            return prefix + str.upper(a)
+    return ''
 
 
 class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
@@ -37,15 +57,18 @@ class ThreadedTCPRequestHandler(socketserver.BaseRequestHandler):
             if decoded[0] >= 0:
                 seq = decoded[0]
                 msg = decoded[1]
-                if type(msg) != list:
+                if type(msg) != list or msg[0] != 'zeus':
                     response = [seq, [1, 'badmsg']]
                 else:
-                    if msg[0] != 'zeus':
-                        response = [seq, [1, 'not a zeus message!']]
-                    elif msg[1] == 'switch':
-                        #  response = [0, 'switch to file {}'.format(msg[2])]
-                        #  response = ['call', 'popup_dialog', ['wtf', {}]]
-                        response = ['ex', 'edit ~/a.cpp']
+                    if msg[1] == 'jump':
+                        if msg[2] == '':
+                            response = [seq, [1, 'not a filename']]
+                        else:
+                            alternate_file = JumpAlternateFile(msg[2])
+                            if alternate_file:
+                                response = ['ex', 'edit {}'.format(alternate_file)]
+                            else:
+                                response = [seq, [1, 'alternate file is not found!']]
                     else:
                         response = [seq, [0, 'what?']]
                 encoded = json.dumps(response)

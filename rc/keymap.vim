@@ -7,9 +7,8 @@ nmap ea <Plug>(EasyAlign)
 nmap <leader>nn :NERDTreeToggle<CR>
 nmap <leader>nc :NERDTreeFind %<CR>
 nmap <Leader>t :TagbarToggle<CR>
-nmap <Leader>q :q<CR>
-nmap <Leader>Q :qa<CR>
-nmap <Leader>w :w<CR>
+" nmap <c-q> :q<CR>
+" nmap <c-s> :w<CR>
 nmap <Leader>p :read !pbpaste<CR>
 
 nn <Leader>cq :cclose<CR>
