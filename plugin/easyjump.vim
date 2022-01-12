@@ -29,4 +29,8 @@ EOF
     endif
 endfunction
 
-map <silent><leader>xx :call <SID>EasyJumpAlternateFile()<CR>
+
+nnoremap <silent> <Plug>(vim-easyjump-alternatate-file) :call <SID>EasyJumpAlternateFile()<CR>
+
+" autocmd FileType cpp map <silent><leader>xx <Plug>(vim-easyjump-alternatate-file)
+

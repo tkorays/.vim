@@ -7,8 +7,6 @@ nmap ea <Plug>(EasyAlign)
 nmap <leader>nn :NERDTreeToggle<CR>
 nmap <leader>nc :NERDTreeFind %<CR>
 nmap <Leader>t :TagbarToggle<CR>
-" nmap <c-q> :q<CR>
-" nmap <c-s> :w<CR>
 nmap <Leader>p :read !pbpaste<CR>
 
 nn <Leader>cq :cclose<CR>
@@ -78,12 +76,16 @@ nmap <c-l> <c-w>l
 nmap <c-p> <c-w>p
 
 " x : execute something
+nmap <leader>xq :q<CR>
+nmap <leader>xQ :qa!<CR>
+nmap <leader>xw :w<CR>
 nmap <leader>xf :CocFix<CR>
 nmap <leader>xh :LspCxxHighlight<CR>
 nmap <leader>xr <Plug>(coc-rename)
 nmap <leader>xb :Git blame<CR>
 nmap <Leader>xl :ALELint<CR>
 nmap <Leader>xs :A<CR>
+nmap <leader>xx <Plug>(vim-easyjump-alternatate-file)
 
 " g : goto
 nn <silent> <leader>gd :ALEDetail<cr>
