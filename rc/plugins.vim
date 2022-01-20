@@ -56,6 +56,8 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     " switch header and execute 'source' files
     " Plug 'vim-scripts/a.vim', { 'for': ['cpp', 'c'] }
 
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
     " manage snips
     Plug 'sirver/ultisnips'
     Plug 'honza/vim-snippets'
@@ -108,6 +110,7 @@ call utils#source(s:path, 'plugins/vim-markdown')
 call utils#source(s:path, 'plugins/vim-markdown-toc')
 call utils#source(s:path, 'plugins/vimtex')
 call utils#source(s:path, 'plugins/vimwiki')
+call utils#source(s:path, 'plugins/vim-go')
 " call utils#source(s:path, 'plugins/vim-win')
 
 let g:interestingWordsGUIColors = ['#aeee00', '#ff0000', '#0000ff', '#b88823', '#ffa724', '#ff2c4b', '#8CCBEA', '#A4E57E', '#FFDB72', '#FF7272', '#FFB3FF', '#9999FF']
