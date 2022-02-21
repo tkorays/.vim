@@ -44,6 +44,8 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     Plug 'puremourning/vimspector'
     " gtest
     Plug 'alepez/vim-gtest'
+    " rust
+    Plug 'rust-lang/rust.vim'
 
     " coc
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -56,6 +58,9 @@ call plug#begin(g:vimrc_root_dir."/bundle")
     " switch header and execute 'source' files
     " Plug 'vim-scripts/a.vim', { 'for': ['cpp', 'c'] }
 
+    " install gotags for tagbar
+    " go get -u github.com/jstemmer/gotags
+    " or brew install gotags
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
     " manage snips

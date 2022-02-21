@@ -97,3 +97,7 @@ nmap <leader>gs :G<CR>
 " nn <silent> <leader>gn :ALENext<CR>
 " nn <silent> <leader>gp :ALEPrevious<CR>
 
+" z for fold
+" fold a code block
+nmap <leader>zb vi{zf
+

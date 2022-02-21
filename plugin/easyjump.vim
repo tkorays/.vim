@@ -15,9 +15,9 @@ if str.lower(ext) in a1 or str.lower(ext) in a2:
         a1, a2 = a2, a1
     for a in a2:
         if os.path.exists(prefix + a):
-            vim.command('let result = "{}{}"'.format(prefix, a))
+            vim.command('let result = "{}{}"'.format(prefix.replace('\\', '\\\\'), a))
         elif os.path.exists(prefix + str.upper(a)):
-            vim.command('let result = "{}{}"'.format(prefix, str.upper(a)))
+            vim.command('let result = "{}{}"'.format(prefix.replace('\\', '\\\\'), str.upper(a)))
 EOF
     if result != ''
         let idx = bufnr(result)
